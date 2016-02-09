@@ -1,0 +1,56 @@
+@import "demo.css";
+
+
+input[type="checkbox"].switchbox {
+  display: none;
+}
+input[type="checkbox"].switchbox ~ label.switchbox-label {
+  cursor: pointer;
+  font-size: 0;
+  display: inline-block;
+  height: 20px;
+  width: 40px;
+  transform: translateY(20%);
+  border: 1px solid #dadae5;
+  background: #F1F1F1;
+  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+}
+input[type="checkbox"].switchbox ~ label.switchbox-label:before {
+  content: " ";
+  display: inline-block;
+  background: #BBBBBB;
+  box-shadow: 0 0 1px 1px rgba(146, 146, 146, 0.9);
+  border-radius: 100%;
+  background-clip: padding-box;
+  width: 50%;
+  height: 100%;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+}
+input[type="checkbox"].switchbox:checked ~ label.switchbox-label {
+  background: #2ecc71;
+}
+input[type="checkbox"].switchbox:checked ~ label.switchbox-label:before {
+  transform: translateX(100%);
+  background: #8AF7B8;
+  box-shadow: 0 0 0px 0px rgba(53, 169, 57, 0.9);
+}
+input[type="checkbox"].switchbox:disabled ~ label.switchbox-label:before {
+  transform: rotate(45deg) translate(40%, -40%) scale(2, 0.3);
+  background: #BBBBBB;
+  box-shadow: 0 0 0px 0px rgba(146, 146, 146, 0);
+  border-radius: 0;
+}
+input[type="checkbox"].switchbox:disabled ~ label.switchbox-label {
+  background: #F1F1F1;
+  box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0);
+}
